@@ -1,0 +1,34 @@
+mixin comment(commentData)
+    .comment 
+        if commentData.postedByAdmin
+            em (Posted by ADMIN)
+        .date= commentData.date
+        .author= commentData.author
+        .text= commentData.text
+
+doctype doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+
+        style. 
+            .comment {
+                font-family: sans-serif;
+                line-height: 1.5;
+                padding: 10px;
+                border: 1px solid black;
+                width: 250px;
+            }
+            .date { font-size: 85%; text-align: right; }
+            .author { font-size: 110%; font-weight: bold }
+            .text { font-size: 100%; }
+    body 
+    -const data = { postedByAdmin: true, date: '30.04.2022', author: 'nobergan', text: 'Lorem ipsum dolor sit amet.' }
+        +comment(data)
+
+    -const data2 = { postedByAdmin: false, date: '29.04.2022', author: 'crog', text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, sit sed.' }
+        +comment(data2)
+        

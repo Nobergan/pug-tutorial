@@ -1,0 +1,34 @@
+doctype doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+    body 
+        input(type="password" name="input-pass" data-js=`${ 1 > 2 ? 'OK' : 'NOT OK' }`)
+
+        //- JS variable with classes
+        - const divClasses = ['class1', 'class2', 'class3']
+
+        div(class=divClasses).
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, architecto.
+        
+        div.div-class(class=divClasses). 
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, architecto.
+
+        //- Object with inline styles
+        - const myStyles = {"color": "red", "background-color": "black"}
+
+        div(style=myStyles).
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, architecto.
+
+        //- Object with attributes
+        - const myAttributes = {'src': 'myPhoto.png', 'alt': 'This is my photo'}
+
+        img&attributes(myAttributes)
+
+        //- Disabled attribute
+        input(type="text" disabled=false)
+        input(type="text" disabled=true)
+        input(type="text" disabled)

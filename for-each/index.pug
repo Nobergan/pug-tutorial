@@ -1,0 +1,35 @@
+doctype doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+    body 
+        h1 For/Each Loop 
+
+        //- EACH loop
+        -const arr = [1, 2, 3, 4, 5]
+        each num in arr 
+            p= num  
+        
+        //- EACH loop with index
+        -const arr2 = [50, 2, 3, 4, 5]
+        each num, i in arr2
+            p= `${num} - ${i}` 
+
+        //- EACH with Object
+        -const grades = {"Web Dev": "85", "Software Design": "90"}
+        each grade, i in grades
+            p= `${grade} - ${i}` 
+
+        //- FOR with Object -----> THE SAME AS EACH
+        -const grades2 = {"Web Dev": "100", "Software Design": "70"}
+        for grade, i in grades2
+            p= `${grade} - ${i}` 
+
+        //- FOR with ELSE
+        for num, i in []
+            p= `${num} - ${i}` 
+        else 
+            strong NO values are here!
